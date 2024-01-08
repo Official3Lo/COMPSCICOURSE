@@ -1,4 +1,4 @@
 # COMPSCI40
-Classworks and Programs created from my Computer Science course - programming concept and computing.
+A compilation of my classwork and programs created from my Computer Science course @FCC - programming concept and computing.
 
 Language(s): C++
