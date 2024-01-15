@@ -29,6 +29,6 @@ int main() {
 
 
 
-	cout << "\n\n\n========================\nSIT© Programming Inc.\n========================" << endl;
+	cout << "\n\n\n========================\nSITÂ© Programming Inc.\n========================" << endl;
 	return 0;
 }
