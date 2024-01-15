@@ -19,6 +19,6 @@ int main() {
 	cout << "Biology       $158.72     " << endl;
 	cout << "==========================" << endl;
 
-	cout << "\n\n\n========================\nSIT© Programming Inc.\n========================" << endl;
+	cout << "\n\n\n========================\nSITÂ© Programming Inc.\n========================" << endl;
 	return 0;
 }
