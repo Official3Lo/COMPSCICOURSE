@@ -37,6 +37,6 @@ int main() {
 	}
 		std::cout << "the smallest number grade is: " << t << endl;
 
-	std::cout << "\n========================\nSIT© Programming Inc.\n========================" << endl;
+	std::cout << "\n========================\nSITÂ© Programming Inc.\n========================" << endl;
 	return 0;
 }
