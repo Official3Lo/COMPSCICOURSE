@@ -102,6 +102,6 @@ int main() {
 		std::cout << "Invalid choice.\n";
 	}
 
-	std::cout << "\n========================\nSIT© Programming Inc.\n========================" << endl;
+	std::cout << "\n========================\nSITÂ© Programming Inc.\n========================" << endl;
 	return 0;
 }
