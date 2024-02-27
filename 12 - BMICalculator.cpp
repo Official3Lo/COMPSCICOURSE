@@ -1,4 +1,6 @@
-﻿#include<iostream>
+//Missing the loop statement
+
+#include<iostream>
 #include<iomanip>
 
 using namespace std;
