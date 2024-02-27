@@ -1,3 +1,5 @@
+//professor comment: Correct assignment is the [SPR24]AnnuityCalculations_DepositSavingVer , but this is a great loan calculator
+
 #include <iostream>
 using namespace std;
 
