@@ -1,4 +1,6 @@
-﻿#include<iostream>
+//comment: only first letter of each word needed to be upper-case, but I did a good job overall.
+
+#include<iostream>
 #include<string>
 
 using namespace std;
