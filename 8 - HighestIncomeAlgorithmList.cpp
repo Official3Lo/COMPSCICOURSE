@@ -1,4 +1,5 @@
-﻿#include<iostream>
+//Comment: Professor is just making up random requirements eg. "more than 5" which led to me not getting full credit. No where stated infinite data insertion. eg("Wanted more than 5")
+#include<iostream>
 #include<iomanip>
 
 using namespace std;
