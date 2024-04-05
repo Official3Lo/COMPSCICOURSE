@@ -67,7 +67,7 @@ int main() {
 
 		//Under $200k sales
 		cout << "\nTotal houses under $200,000.00 USD: " << count << " ->" << endl;
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 200; i++) {
 			cout << a[i] << endl;
 	}
 	return 0;
