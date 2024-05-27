@@ -111,6 +111,29 @@ Features that can be implemented:
 [P1]
 - While loop to give option to keep trying to get more points.
 - Add multiple variation that allows random quizzes.
+=====[Code]=====
+//Data variable
+int x, y, a, points = 0, c = 0;
+int i = 0;
+srand(time(0));
+
+while (c == 0) {
+	x = rand() % 10;
+	y = rand() % 10;
+	cout << x << "*" << y << "= ?" << endl;
+	cin >> a;
+	if (a == x * y) {
+		cout << "correct";
+		points++;
+	}
+	else {
+		cout << "wrong";
+	}
+	cout << "Points: \n" << points
+		<< "wanna do more? press 0 if so.";
+	cin >> c;
+}
+================
 [P2]
 -
 */
