@@ -7,7 +7,7 @@ int main() {
 	std::cout << "|     > SIT Quiz <    |" << endl;
 	std::cout << "X=====================X" << endl;
 
-	//data variable;
+	//Data variable;
 	double points = 0;
 	int choice;
 	char answer;
@@ -85,13 +85,14 @@ int main() {
 	//Program 3
 	case 3:
 		char ans;
-		std::cout << "Can you ride a bicycle to get to the moon" << endl;
+		std::cout << "Can you ride a bicycle to get to the moon? " << endl;
 		cin >> ans;
 		if (ans == 'y') {
 			std::cout << "Anything is possible!" << endl;
+			points++;
 		}
 		if (ans == 'n') {
-			std::cout << "You cannot complete a marathon in 10 minutes." << endl;
+			std::cout << "Don't be such a pessemistic!" << endl;
 		}
 		else {
 			std::cout << "Error! Shutting down." << endl;
@@ -105,3 +106,11 @@ int main() {
 	std::cout << "\n========================\nSIT© Programming Inc.\n========================" << endl;
 	return 0;
 }
+/*
+Features that can be implemented:
+[P1]
+- While loop to give option to keep trying to get more points.
+- Add multiple variation that allows random quizzes.
+[P2]
+-
+*/
