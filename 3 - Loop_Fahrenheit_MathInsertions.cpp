@@ -32,7 +32,7 @@ int main() {
 		cout << "================================================" << endl;
 		cout << setw(11) << "Celcius" << setw(20) << "Fahrenheit" << endl;
 		cout << "================================================" << endl;
-		for (int a = 10; a <= 50; a = a + 10) {
+		for (int a = 0; a < 5; a = a++) {
 			cout << setw(8) << a << setw(20) << 9 / 5.0 * a + 32 << endl;
 		}
 	}
@@ -55,6 +55,6 @@ int main() {
 		cout << "sum of digit is " << sum << endl;
 		
 	}
-	cout << "\n\n========================\nSIT© Programming Inc.\n========================" << endl;
+	cout << "\n\n========================\nSITÂ© Programming Inc.\n========================" << endl;
 	return 0;
 }
