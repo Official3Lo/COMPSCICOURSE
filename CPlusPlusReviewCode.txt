@@ -1,0 +1,804 @@
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main() {
+	//Data variable
+	int input;
+
+	cout << "\nMenu-driven Program:"
+		<<"\n1. C to F \n2. Data Storage"<<endl;
+
+	cin >> input;
+
+	if (input == 1) {
+		//program 1
+		double c=10, f= ((9 / 5) * c + 32);
+
+		//final output
+		cout << setw(11) << "Celcius" << setw(20) << "Fahrenheit" << endl;
+		cout << "============================" << endl;
+		for (int a = 1; a < 5; a++) {
+			cout << setw(8) << a << setw(20) << 9 / 5.0 * a + 32 << endl;
+		}
+	}
+
+	if (input == 2) {
+		//program 2
+		int a, sum = 0;
+
+		cout << "enter a num 0-1000:" << endl;
+		cin >> a;
+
+		while (a > 0) {
+			int digit = a % 10;
+			sum += digit;
+			a /= 10;
+		}
+		cout << "sum of digit is " << sum << endl;
+	}
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+//Start from top to bottom. This is just to resharpen c++ skills and advancing from self-learning.
+
+//[Assignment x]
+//====================================================================================
+
+//Assignment 25
+#include<iostream>
+using namespace std;
+
+char* removeBlank(char a[], int remove) {
+	for (int i = 0; i < a[i]; i++) {
+		while (a[i] != '\0') {
+			if (a[i] == ' ') {
+				remove = i;
+				int d = remove;
+				while (a[d] != '\0') {
+					a[d] = a[d+i];
+					d++;
+				}
+			}
+			i++;
+		}
+	}
+	return a;
+}
+char *getCopyof(char a[], int length)
+{
+	char* c = new char[length];
+	for (int i = 0; i < length; i++) {
+		c[i] = a[i];
+	}
+	return c;
+}
+
+int main() {
+	char a[10] = { 'h', ' ', 'a', ' ', 'p', ' ', 'p', ' ', 'y', '\0'};
+	char* p;
+	p = getCopyof(a, 10);
+	for (int i = 0; i < 10; i++) {
+		cout << p[i];
+	}
+	cout << "  " << endl;
+	cout << "=================" << endl;
+	char* t;
+	t = removeBlank(a, 10);
+	for (int i = 0; i < 10; i++) {
+		cout << t[i];
+	}
+	cout << " " << endl;
+	cout << "=================" << endl;
+	return 0;
+}
+
+
+//=====================================
+
+//Assignment 26 - 3 files cylinder and patientrecord .h file and main.cpp
+
+/*Cylinder.h file*/
+//Headliner file for clss Cylinder
+#include <iostream>
+using namespace std;
+
+#ifndef Cylinder_h
+#define Cylinder_h
+
+class Cylinder
+{
+private:
+	double radius;
+	double height;
+public:
+	void setRadius(double r);
+	void setHeight(double h);
+	double getRadius();
+	double getHeight();
+	void display();
+};
+
+//implementation
+void Cylinder::setRadius(double r)
+{
+	radius = r;
+}
+void Cylinder::setHeight(double h)
+{
+	height = h;
+}
+double Cylinder::getRadius()
+{
+	return radius;
+}
+double Cylinder::getHeight()
+{
+	return height;
+}
+void Cylinder::display()
+{
+	cout << "this is a cylinder\n";
+	cout << "the radius is " << radius << endl;
+	cout << "the height is " << height << endl;
+}
+#endif
+
+/*PatientRecord file*/
+//Headliner file for clss Patient Record
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
+
+#ifndef PatientRecord_h
+#define PatientRecord_h
+
+class PatientRecord
+{
+private:
+    string lastName;
+    string firstName;
+    string condition;
+    double priority;
+public:
+    PatientRecord();
+    PatientRecord(string last, string first, string con, double prior);
+    void setLastName(string last);
+    string getLastName();
+    void setFirstName(string first);
+    string getFirstName();
+    void setCondition(string condition);
+    string getCondition();
+    void setPriority(double priority);
+    double getPriority();
+    void display();
+};
+//implement
+PatientRecord::PatientRecord()
+{
+    lastName = "None";
+    firstName = "None";
+    condition = "----";
+    priority = 0;
+}
+PatientRecord::PatientRecord(string last, string first, string con, double prior)
+{
+    lastName = last;
+    firstName = first;
+    condition = con;
+    priority = prior;
+}
+void PatientRecord::setLastName(string last)
+{
+    lastName = last;
+}
+string PatientRecord::getLastName()
+{
+    return lastName;
+}
+void PatientRecord::setFirstName(string first)
+{
+    firstName = first;
+}
+string PatientRecord::getFirstName()
+{
+    return firstName;
+}
+void PatientRecord::setCondition(string con)
+{
+    condition = con;
+}
+string PatientRecord::getCondition()
+{
+    return condition;
+}
+void PatientRecord::setPriority(double prior)
+{
+    priority = prior;
+}
+double PatientRecord::getPriority()
+{
+    return priority;
+}
+void PatientRecord::display()
+{
+    cout << left << endl;
+    cout << "===================================" << endl;
+    cout << setw(30) << "Patient Last Name:" << setw(10) << lastName << endl;
+    cout << setw(30) << "Patient First Name:" << setw(10) << firstName << endl;
+    cout << setw(30) << "Condition: " << setw(10) << condition << endl;
+    cout << setw(30) << "Priority:" << setw(10) << priority << endl;
+    cout << "===================================" << endl;
+}
+#endif
+
+/*Main.cpp file*/
+#include<iostream>
+#include"Cylinder.h"
+#include"PatientRecord.h"
+using namespace std;
+
+int main() 
+{
+	Cylinder cylinderA, cylinderB;
+	cylinderA.setRadius(7);
+	cylinderA.setHeight(5);
+	cylinderA.display();
+	system("pause");
+	//-- 2nd question begins...
+	PatientRecord recordA;
+	PatientRecord recordB("Lo", "Sit", "SuperCold", 5.0);
+	recordA.display();
+	recordB.display();
+	
+	return 0;
+}
+
+
+//============================================
+
+//[27]
+#include<iostream>
+using namespace std;
+
+void flipCoin(int c)
+{
+	int t = 0, h = 0;
+	for (int i = 0; i <= c; i++) {
+		if (rand() % 2 == 0) {
+			t+=1;
+			cout << "t" << endl;
+		}
+		else {
+			h+=1;
+			cout << "h" << endl;
+		}
+	}
+}
+int sumSquare(int x, int y)
+{
+	int s = 0;
+	for (int i = x; i <= y; i++)
+		s += i*i;
+	return s;
+}
+
+int main()
+{
+	int a, b;
+	cout << " Enter two positive integers: \n";
+	cin >> a >> b;
+	int c;
+	cout << "Please enter the amount of times to flip a coin: \n";
+	cin >> c;
+	flipCoin(c);
+	cout << "Sum of int between those numbers is: " << sumSquare(a, b) << endl;
+	system("pause");
+	return 0;
+}
+
+
+//[28]
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int x;
+	cout << "please choose an option: \n";
+	cout << "1. Make a Triangle" << endl;
+	cout << "2. Make a Rectangle" << endl;
+	cin >> x;
+	if (x == 1) {
+		int a;
+		cout << "please enter the base of triangle" << endl;
+		cin >> a;
+		//assume number user enter is 4
+		//now use forloop replace four of the for loops.
+		for (int k = a; k >= 1; k--) {
+			for (int i = 0; i < k; i++)
+				cout << "* ";
+			cout << endl;
+		}
+	}
+	if (x == 2) {
+		int b, d, e;
+		cout << "enter base for rectangle" << endl;
+		cin >> b;
+		for (d = 0; d < 4; d++) {
+			for (e = 0; e < 6; e++)
+				if (d == 0 or d == 3 or e == 0 or e == 5)
+					cout << "* ";
+				else
+					cout << " ";
+				cout << endl;
+		}
+	}
+	return 0;
+}
+
+
+//[30]
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+void solution(double a, double b, double c, double &s1, double &s2)
+{
+	cout.setf(ios::fixed);
+	cout.precision(2);
+	double d = b * b - 4 * a * c;
+	if (d < 0)
+		cout << "there is no real solution \n";
+	else if (d == 0) {
+		s1 = (-b) / (2 * a);
+		s2 = (-b) / (2 * a);
+	}
+	else {
+		s1 = (-b + sqrt(b * b - 4 * a * c)) / (2*a);
+		s2 = (-b - sqrt(b * b - 4 * a * c)) / (2*a);
+	}
+}
+
+int main()
+{
+	double a, b, c, x1, x2;
+	cout << "please enter the coefficients of a quatratic equation:\n";
+	cin >> a >> b >> c;
+	solution(a, b, c, x1, x2);
+	cout << "The solution is: " << x1 << endl;
+	cout << "The solution is: " << x2 << endl;
+	return 0;
+}
+
+
+//assignment 31
+
+
+
+/* Exercise y */
+
+//[1]
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i = 1, a, b, ans, counter,points=0;
+	cout << "How many questions you want to practice?" << endl;
+	cin >> counter;
+	while (i < counter) {
+		cout << "Question" << i << endl;
+		a = rand() % 100;
+		b = rand() % 100;
+		cout << a << " x " << b << " = ? \n";
+		cin >> ans;
+		if (ans == a * b) {
+			cout << "gj right" << endl;
+			points++;
+		}
+		else {
+			cout << "nope wrong" << endl;
+		}
+		cout << "========================================" << endl;
+		i++;
+	}
+	return 0;
+}
+
+
+//[2]
+#include<iostream>
+#include<ctime>
+using namespace std;
+
+int main()
+{
+	//or do cin >> a >> b >> c >> d by creating int b-d;
+	int a, max;
+	cout << "Enter 5 ints:\n";
+	cin >> a;
+	max = a;
+	//--------------------------------------------
+	cin >> a;
+	if (a > max) {
+		max = a;
+	}
+	//---------------------------------------------
+	cin >> a;
+	if (a > max) {
+		max = a;
+	}
+	//---------------------------------------------
+	cin >> a;
+	if (a > max) {
+		max = a;
+	}
+	//---------------------------------------------
+	cin >> a;
+	if (a > max) {
+		max = a;
+	}
+	//---------------------------------------------
+	cout << "largest number is.. " << max << endl;
+	return 0;
+}
+
+
+//[4]
+#include<iostream>
+using namespace std;
+
+void functionA(int a) // adding "&" next to int a will change x to 15 which will change this passing value to passing by reference.
+{
+	a += 10;
+	cout << a << endl;
+}
+
+int main()
+{
+	int x = 5;
+	functionA(x);
+	cout << x << endl;
+
+	return 0;
+}
+
+//[5]
+#include<iostream>
+using namespace std;
+#include<ctime>
+
+int main() 
+{
+	int x, y, a, point = 0, c = 0;
+	int i = 0;
+	srand(time(0));
+
+	while (c==0) {
+		x = rand() % 10;
+		y = rand() % 10;
+		cout << x << "*" << y << " = ?" << endl;
+		cin >> a;
+		if (a == x * y) {
+			cout << "correctomundo!" << endl;
+			point++;
+		}
+		else {
+			cout << "oops, wrong numero." << endl;
+		}
+		cout << "wanna do more, input 0." << endl;
+		cin >> c;
+	}
+	cout << "your credit is: " << point << endl;
+	return 0;
+}
+
+//[6]
+#include<iostream>
+using namespace std;
+#include<ctime>
+
+int main() 
+{
+	int x, y, a, point = 0, c;
+	int i = 0;
+	srand(time(0));
+	cout << "cuantos questions?" << endl;
+	cin >> c;
+	while (i<c) {
+		x = rand() % 10;
+		y = rand() % 10;
+		cout << x << "*" << y << " = ?" << endl;
+		cin >> a;
+		if (a == x * y) {
+			cout << "correctomundo!" << endl;
+			point++;
+		}
+		else {
+			cout << "oops, wrong numero." << endl;
+		}
+		i++;
+	}
+	cout << "your credit is: " << point << endl;
+	return 0;
+}
+
+//[7]
+#include<iostream>
+using namespace std;
+
+/* 1st ex answer: line 1= 6 11 line 2= 11 6
+void swapA(int a, int b);
+void swapB(int &a, int &b);
+int main(){ 
+int x=6, y=11;
+swapA(x,y);
+cout<<x<<" " << y << endl;
+swapB(x,y);
+cout<<x<<" "<< y << endl;
+return 0;}
+void swapA(int a, int b) 
+{ 
+	int t; 
+	t = a; 
+	a = b; 
+	b = t; 
+}
+void swapB(int& a, int& b)
+{ 
+	int t;  
+	t = a;  
+	a = b; 
+	b = t; 
+}
+*/
+
+
+//[9]
+#include<iostream>
+using namespace std;
+
+/* 1st ex answer: line 1= 6 11 line 2= 11 6
+void swapA(int a, int b);
+void swapB(int &a, int &b);
+int main(){ 
+int x=6, y=11;
+swapA(x,y);
+cout<<x<<" " << y << endl;
+swapB(x,y);
+cout<<x<<" "<< y << endl;
+return 0;}
+void swapA(int a, int b) 
+{ 
+	int t; 
+	t = a; 
+	a = b; 
+	b = t; 
+}
+void swapB(int& a, int& b)
+{ 
+	int t;  
+	t = a;  
+	a = b; 
+	b = t; 
+}
+*/
+
+
+//[10] quick pointer
+#include<iostream>
+using namespace std;
+
+int main() {
+	int a = 1, b = 2;
+
+	int* p = &a;
+
+	int* q = &b;
+
+	*p = *q;
+
+	*q = *p;
+
+	cout << a << " " << b << endl;
+}
+
+
+/*Anything below was archived and not part of the Spr24 CSCI40 course. Useful though.*/ 
+
+
+//--- Pointers, Arrays and references
+#include<iostream>
+
+using namespace std;
+
+
+/*Pointers
+int main() {
+	int a = 5;
+	int* p = &a;
+	*p = 15;
+	cout << a << endl;
+	a = 20;
+	cout << *p << endl;
+	p = new int;
+
+	*p = 100;
+	cout << *p << endl;
+	cout << a << endl;
+	cout << "\n\n\n========================\nSIT© Programming Inc.\n========================" << endl;
+	return 0;
+}
+*/
+
+/* Arrays and length
+int main() {
+
+	//Data variable
+	int length;
+	int* p;
+	cout << "enter array length: ";
+
+	//length assigning
+	cin >> length;
+	p = new int[length];
+	
+	//data entry
+	for (int i=0; i<length; i++) {
+		cout << "enter an int: ";
+		cin >> p[i];
+	}
+
+	//final output
+	cout << "Array elements: " << endl;
+	for (int i = 0; i < length; i++) {
+		cout << p[i] << " ";
+	}
+
+	cout << "\nPointer address: " << p << endl;
+
+	delete[] p;
+
+	return 0;
+}
+*/
+
+
+/* Class, Header and Source File
+//Header File
+
+#ifndef MYCLASS1_H
+#define MYCLASS1_H
+
+class MyClass1 {
+public:
+    MyClass1();      // Constructor declaration
+    void display(); // Member function declaration
+
+private:
+    int value;      // Member variable declaration
+};
+
+#endif // MYCLASS_H
+
+//Source File
+#include "MyClass1.h"
+#include <iostream>
+
+MyClass1::MyClass1() : value(0) {
+    // Constructor implementation
+}
+
+void MyClass1::display() {
+    std::cout << "Value: " << value << std::endl;
+}
+
+//Main file
+
+#include<iostream>
+#include"MyClass1.h"
+
+using namespace std;
+
+int main() {
+	//Data variable
+	MyClass1 obj;
+
+	//Data display
+	obj.display();
+	return 0;
+}
+*/
+
+
+/* int length p random
+int main() {
+	int length;
+	cout << "please enter length of the array you would like to create: \n";
+	cin >> length;
+	int* p = new int[length];
+	for (int i = 0; i < length; i++)
+	{
+		p[i] = rand() % 100;
+	}
+	for (int i = 0; i < length; i++) {
+		cout << p[i] << endl;
+	}
+	return 0;
+}
+*/
+
+
+/* int array iteration
+int main() {
+	//data variable
+	int a[5] = { 3,1,2,4,5 };
+	int* p;
+	p = a;
+
+	//data output
+	for (int i = 0; i < 5; i++) {
+		cout << p[i] << endl;
+	}
+
+	//renew data
+	p = new int[3];
+	p[0] = 7;
+	p[1] = 5;
+	p[2] = 4;
+
+	cout << "\nnew data for p[1-3]: \n";
+	for (int i = 0; i < 3; i++) {
+		cout << p[i] << endl;
+	}
+
+	return 0;
+}
+*/
+
+
+/*int array iteration pt2
+int* getCopyOf(int* array, int length) {
+	int* x = new int[length];
+
+	for (int i = 0; i < length; i++) {
+		x[i] = array[i];
+	}
+	return x;
+}
+
+int main() {
+	//data variable
+	int a[5] = { 1,2,3,4,5 };
+	int* p;
+
+	//data output using function
+	p = getCopyOf(a, 5);
+
+	cout << "------data list----" << endl;
+	for (int i = 0; i < 5; i++) {
+		cout << p[i] << endl;
+	}
+	cout << "--Data being converted...----" << endl;
+	for (int i = 0; i < 5; i++) {
+		p[i] = 100;
+	}
+	cout << "----final out of data----" << endl;
+	for (int i = 0; i < 5; i++) {
+		cout << p[i] << endl;
+	}
+	return 0;
+}
+*/
